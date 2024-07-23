@@ -42,12 +42,12 @@ This script will:
 ## ⚙️ Configuration
 The devopsfetch tool is configured during installation. The systemd service is set to monitor activities from the current date. If you need to modify the date range or other settings, edit the systemd service file:
 
-```bash
+    ```bash
    sudo nano /etc/systemd/system/devopsfetch.service
    
 After making changes, reload the systemd daemon and restart the service:
 
-```bash
+    ```bash
    sudo systemctl daemon-reload
    sudo systemctl restart devopsfetch.service
 
@@ -60,61 +60,61 @@ Usage: devopsfetch [-h] [-p [port_number]] [-d [container_name]] [-n [domain]] [
 Examples
 1. Display help:
 
- ```bash
-devopsfetch -h
+    ```bash
+    devopsfetch -h
 
 2. List all active ports:
 
- ```bash
-devopsfetch -p
+    ```bash
+    devopsfetch -p
 
 3. Get information about a specific port:
 
- ```bash
-devopsfetch -p 80
+    ```bash
+    devopsfetch -p 80
 
 4. List all Docker containers:
 
- ```bash
-devopsfetch -d
+    ```bash
+    devopsfetch -d
 
 
 5. Get information about a specific Docker container:
 
- ```bash
-devopsfetch -d mycontainer
+    ```bash
+    devopsfetch -d mycontainer
 
 6. List all Nginx domains:
 
- ```bash
-devopsfetch -n
+    ```bash
+    devopsfetch -n
 
 7. Get configuration for a specific Nginx domain:
 
- ```bash
-devopsfetch -n example.com
+    ```bash
+    devopsfetch -n example.com
 
 8. List all users and their last login times:
 
- ```bash
-devopsfetch -u
+    ```bash
+    devopsfetch -u
 
 9. Get information about a specific user:
 
- ```bash
-devopsfetch -u johndoe
+    ```bash
+    devopsfetch -u johndoe
 
 10. Display activities within a date range:
 
- ```bash
-devopsfetch -t "2024-07-22 2024-07-23"
+    ```bash
+    devopsfetch -t "2024-07-22 2024-07-23"
 
 ## 📊 Logging
 DevOpsFetch logs its activities to /var/log/devopsfetch.log. Log rotation is configured to manage the log file size and retention.
 To view the logs:
 
- ```bash
-sudo tail -f /var/log/devopsfetch.log
+    ```bash
+    sudo tail -f /var/log/devopsfetch.log
 
 Log rotation settings can be modified in /etc/logrotate.d/devopsfetch.
 ## 🤝 Contributing
