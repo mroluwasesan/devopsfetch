@@ -8,20 +8,6 @@ sudo apt install -y iproute2 docker.io nginx
 cat << 'EOF' > /usr/local/bin/devopsfetch
 #!/bin/bash
 
-show_help() {
-    cat << HELP
-Usage: ${0##*/} [-h] [-p [port_number]] [-d [container_name]] [-n [domain]] [-u [username]] [-t [date_range]]
-Retrieve and display system information.
-
-    -h, --help              Display this help and exit.
-    -p, --port [port_number]Display all active ports and services, or detailed information about a specific port.
-    -d, --docker [name]     List all Docker images and containers, or detailed information about a specific container.
-    -n, --nginx [domain]    Display all Nginx domains and their ports, or detailed configuration information for a specific domain.
-    -u, --users [username]  List all users and their last login times, or detailed information about a specific user.
-    -t, --time [date_range] Display activities within a specified date range (YYYY-MM-DD or YYYY-MM-DD YYYY-MM-DD).
-HELP
-}
-
 list_ports() {
     echo -e "Netid\tState\tRecv-Q\tSend-Q\tLocal Address:Port\tPeer Address:Port\tProcess"
     ss -tulnp | awk 'NR>1 {print $1 "\t" $2 "\t" $3 "\t" $4 "\t" $5 "\t" $6 "\t" $7}'
@@ -70,6 +56,20 @@ time_range_activities() {
     local end_date="$2"
     echo "Activities from $start_date to $end_date:"
     journalctl --since="$start_date" --until="$end_date"
+}
+
+show_help() {
+    cat << HELP
+Usage: ${0##*/} [-h] [-p [port_number]] [-d [container_name]] [-n [domain]] [-u [username]] [-t [date_range]]
+Retrieve and display system information.
+
+    -h, --help              Display this help and exit.
+    -p, --port [port_number]Display all active ports and services, or detailed information about a specific port.
+    -d, --docker [name]     List all Docker images and containers, or detailed information about a specific container.
+    -n, --nginx [domain]    Display all Nginx domains and their ports, or detailed configuration information for a specific domain.
+    -u, --users [username]  List all users and their last login times, or detailed information about a specific user.
+    -t, --time [date_range] Display activities within a specified date range (YYYY-MM-DD or YYYY-MM-DD YYYY-MM-DD).
+HELP
 }
 
 while [[ "$#" -gt 0 ]]; do
