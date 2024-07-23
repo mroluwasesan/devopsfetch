@@ -4,7 +4,7 @@ DevOpsFetch is a powerful tool for DevOps professionals to collect and display s
 
 ## 📋 Table of Contents
 
-- [Features](#features)
+- [Features](#Features)
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
