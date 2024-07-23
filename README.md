@@ -25,11 +25,11 @@ DevOpsFetch is a powerful tool for DevOps professionals to collect and display s
 ## 🛠 Installation
 
 1. Clone the repository:
-```bash
+    ```bash
    git clone https://github.com/mroluwasesan/devopsfetch.git
    cd devopsfetch
 2. Run the installation script:
-```bash
+    ```bash
    sudo bash initialize_main.sh
 
 This script will:
@@ -43,12 +43,12 @@ This script will:
 The devopsfetch tool is configured during installation. The systemd service is set to monitor activities from the current date. If you need to modify the date range or other settings, edit the systemd service file:
 
     ```bash
-    sudo nano /etc/systemd/system/devopsfetch.service
+   sudo nano /etc/systemd/system/devopsfetch.service
 After making changes, reload the systemd daemon and restart the service:
 
     ```bash
-    sudo systemctl daemon-reload
-    sudo systemctl restart devopsfetch.service
+   sudo systemctl daemon-reload
+   sudo systemctl restart devopsfetch.service
 
 ## 🖥 Usage
 
@@ -59,60 +59,60 @@ Usage: devopsfetch [-h] [-p [port_number]] [-d [container_name]] [-n [domain]] [
 Examples
 1. Display help:
 
-```bash
+ ```bash
 devopsfetch -h
 
 2. List all active ports:
 
-```bash
+ ```bash
 devopsfetch -p
 
 3. Get information about a specific port:
 
-```bash
+ ```bash
 devopsfetch -p 80
 
 4. List all Docker containers:
 
-```bash
+ ```bash
 devopsfetch -d
 
 
 5. Get information about a specific Docker container:
 
-```bash
+ ```bash
 devopsfetch -d mycontainer
 
 6. List all Nginx domains:
 
-```bash
+ ```bash
 devopsfetch -n
 
 7. Get configuration for a specific Nginx domain:
 
-```bash
+ ```bash
 devopsfetch -n example.com
 
 8. List all users and their last login times:
 
-```bash
+ ```bash
 devopsfetch -u
 
 9. Get information about a specific user:
 
-```bash
+ ```bash
 devopsfetch -u johndoe
 
 10. Display activities within a date range:
 
-```bash
+ ```bash
 devopsfetch -t "2024-07-22 2024-07-23"
 
 ## 📊 Logging
 DevOpsFetch logs its activities to /var/log/devopsfetch.log. Log rotation is configured to manage the log file size and retention.
 To view the logs:
 
-```bash
+ ```bash
 sudo tail -f /var/log/devopsfetch.log
 
 Log rotation settings can be modified in /etc/logrotate.d/devopsfetch.
