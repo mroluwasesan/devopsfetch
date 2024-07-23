@@ -47,7 +47,7 @@ The devopsfetch tool is configured during installation. The systemd service is s
    
 After making changes, reload the systemd daemon and restart the service:
 
-    ```bash
+    
     sudo systemctl daemon-reload
     sudo systemctl restart devopsfetch.service
 
