@@ -113,7 +113,7 @@ Examples
 DevOpsFetch logs its activities to /var/log/devopsfetch.log. Log rotation is configured to manage the log file size and retention.
 To view the logs:
 
-    ```bash
+    
     sudo tail -f /var/log/devopsfetch.log
 
 Log rotation settings can be modified in /etc/logrotate.d/devopsfetch.
