@@ -43,13 +43,13 @@ This script will:
 The devopsfetch tool is configured during installation. The systemd service is set to monitor activities from the current date. If you need to modify the date range or other settings, edit the systemd service file:
 
     ```bash
-   sudo nano /etc/systemd/system/devopsfetch.service
+    sudo nano /etc/systemd/system/devopsfetch.service
    
 After making changes, reload the systemd daemon and restart the service:
 
     ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl restart devopsfetch.service
+    sudo systemctl daemon-reload
+    sudo systemctl restart devopsfetch.service
 
 ## 🖥 Usage
 
