@@ -25,11 +25,11 @@ DevOpsFetch is a powerful tool for DevOps professionals to collect and display s
 ## 🛠 Installation
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone https://github.com/mroluwasesan/devopsfetch.git
    cd devopsfetch
 2. Run the installation script:
-   ```bash
+```bash
    sudo bash initialize_main.sh
 
 This script will:
